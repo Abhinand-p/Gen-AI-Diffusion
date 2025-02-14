@@ -169,3 +169,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Fashion MNIST dataset
+From U-Nets to Diffusion/data/FashionMNIST
