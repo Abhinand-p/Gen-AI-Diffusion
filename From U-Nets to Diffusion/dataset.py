@@ -1,7 +1,9 @@
 import torch
 import torchvision
 import torchvision.transforms as transforms
+
 from torch.utils.data import DataLoader
+from utils import show_save_images
 
 IMG_SIZE = 16
 IMG_CH = 1
@@ -40,7 +42,9 @@ def load_transformed_fashionMNIST():
     ]
     data_transform = transforms.Compose(data_transforms)  # Combine transformations into a pipeline
     train_set = load_fashionMNIST(data_transform, train=True)
+    show_save_images(train_set, 10, "Visualisation", "Training_samples.png")
     test_set = load_fashionMNIST(data_transform, train=False)
+    show_save_images(test_set, 10, "Visualisation", "Testing_samples.png")
     return torch.utils.data.ConcatDataset([train_set, test_set])  # Merge both datasets into a single dataset
 
 def get_dataloader():
